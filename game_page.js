@@ -11,11 +11,11 @@ document.getElementById("player1_score").innerHTML = player1_score ;
 document.getElementById("player2_score").innerHTML = player2_score ;
 
 document.getElementById("player_question").innerHTML = "Turno De Pergunta - " + player1_name;
-document.getElementById("player_answer").innerHTML = "Turno De resposta - " + player1_name;
+document.getElementById("player_answer").innerHTML = "Turno De resposta - " + player2_name;
 
 function send() {
     get_word = document.getElementById("word").value;
-    word = get_word.toLowerCase ();
+    word = get_word.toLowerCase();
     console.log("palavra em letras minusculas = " + word);
 
     charAt1 = word.charAt1(1);
@@ -35,14 +35,14 @@ function send() {
 
     question_word = "<h4 id='word_display'> P "+remove_charAt3+"</h4>";
     input_box = "<br>Resposta : <input type 'text' id='input_check_box'>";
-    check_button = "<br><br><button class='btn btn-info' oneclick='check()'>verificar</button>";
+    check_button = "<br><br><button class='btn btn-info' onclick='check()'>verificar</button>";
     row = question_word + input_box + check_button;
     document.getElementById("output").innerHTML = row;
     document.getElementById("word").value = "";
 }
  
-question_turn = "player_1";
-answer_turn = "player_2";
+question_turn = "player1";
+answer_turn = "player2";
 
 function check()
 {
@@ -54,12 +54,12 @@ function check()
         if(answer_turn == "player1") 
         {
             player1_score = player1_score +1;
-            document.getElementById("player1_score"),innerHTML = player1_score;
+            document.getElementById("player1_score").innerHTML = player1_score;
         }
         else
         {
             player2_score = player2_score +1;
-            document.getElementById("player1_score"),innerHTML = player2_score;
+            document.getElementById("player2_score").innerHTML = player2_score;
         }
     }
 
